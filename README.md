@@ -25,10 +25,7 @@ These methods perform arithmetic and bitwise operations based on the selected nu
 The currentOperation variable tracks the active operation.
 The memory variable stores intermediate results.
 
-## Missing Code:
-
-The handleBinaryOperations() method is incomplete in the provided code.
-Key Points:
+## Key Points:
 
 The code effectively demonstrates basic GUI programming and event handling in Java.
 It showcases the use of radio buttons for user input and separate methods for handling different number systems.
@@ -36,4 +33,8 @@ The code could be further improved by:
 Completing the handleBinaryOperations() method.
 Implementing error handling for invalid input or operations.
 Adding features like parentheses support, scientific notation, and memory functions.
+
+## Dependencies
+   -Java awt
+   -Java Swing
    
