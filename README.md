@@ -36,5 +36,5 @@ Adding features like parentheses support, scientific notation, and memory functi
 
 ## Dependencies
    -Java awt
-   -Java Swing
+     -Java Swing
    
