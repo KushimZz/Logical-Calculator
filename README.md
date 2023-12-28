@@ -32,5 +32,5 @@ Missing implementation for binary operations.
 
 
 ## Author
-[Yasin Mert Özer]([https://pages.github.com/](https://github.com/KushimZz)https://github.com/KushimZz)
+[Yasin Mert Özer](https://github.com/KushimZz)
    
