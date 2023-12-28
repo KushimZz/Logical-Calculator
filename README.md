@@ -29,4 +29,7 @@ This Java code implements a basic graphical calculator with support for decimal,
 Demonstrates basic GUI programming and event handling.
 Uses radio buttons for user input and separate methods for number systems.
 Missing implementation for binary operations.
+
+## Author
+[Yasin Mert Özer]([https://pages.github.com/](https://github.com/KushimZz)https://github.com/KushimZz)
    
