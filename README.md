@@ -1,40 +1,32 @@
-# Logical-Calculator
-This is a basic Logical Calculator Created in Java by using AWT and Swing for GUI.
 
-## Class and Main Structure:
+# Logical Calculator Code Analysis
 
-The code defines a class named GUI that extends JFrame and implements ActionListener.
-The GUI() constructor initializes the GUI components and sets up event listeners.
-The main method is not explicitly shown, but it would typically create an instance of the GUI class to launch the application.
+## Overview
 
-## GUI Components:
+This Java code implements a basic graphical calculator with support for decimal, hexadecimal, and binary calculations.
 
-JTextField for displaying entered numbers and results.
-JRadioButton for selecting the number system (binary, decimal, hexadecimal).
-Various JButton objects representing numbers, operators, and functions.
+## Key Components
 
-## Handling Button Clicks:
+- GUI Class:
+- GUI extends JFrame and handles the overall GUI layout and user interactions.
+- Components:
+- JTextField: Displays entered numbers and results.
+- JRadioButton: Selects the desired number system.
+- JButton: Represents numbers, operators, and functions.
+- Event Handling:
+- The actionPerformed method responds to button clicks.
+- Operations:
+- Separate methods handle calculations for each number system:
+- handleDecimalOperations()
+- handleHexadecimalOperations()
+- handleBinaryOperations() (currently incomplete)
+- State Tracking:
+- currentOperation: Tracks the active operation.
+- memory: Stores intermediate results.
 
-The actionPerformed method is the core of the calculator's functionality.
-It identifies the clicked button and calls appropriate methods to perform operations or modify the displayed values.
+## Points to Consider
 
-## Operations and Logic:
-
-The code defines separate methods for handling decimal, hexadecimal, and binary operations.
-These methods perform arithmetic and bitwise operations based on the selected number system.
-The currentOperation variable tracks the active operation.
-The memory variable stores intermediate results.
-
-## Key Points:
-
-The code effectively demonstrates basic GUI programming and event handling in Java.
-It showcases the use of radio buttons for user input and separate methods for handling different number systems.
-The code could be further improved by:
-Completing the handleBinaryOperations() method.
-Implementing error handling for invalid input or operations.
-Adding features like parentheses support, scientific notation, and memory functions.
-
-## Dependencies
-   -Java awt
-     -Java Swing
+Demonstrates basic GUI programming and event handling.
+Uses radio buttons for user input and separate methods for number systems.
+Missing implementation for binary operations.
    
