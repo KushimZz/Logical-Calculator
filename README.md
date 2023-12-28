@@ -1,2 +1,4 @@
-# Logical-Calculator
-A basic Programmer Calculator in Java.
+## Logical-Calculator
+This is a basic Logical Calculator Created in Java by using AWT and Swing for GUI.
+
+# Usage
