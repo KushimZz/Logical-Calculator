@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class GUI extends JFrame implements ActionListener{
+public class LogicalCalculator extends JFrame implements ActionListener{
     String memory ="";
     String currentOperation ="";
     String radix = "";
@@ -57,7 +57,7 @@ public class GUI extends JFrame implements ActionListener{
 
 
 
-    GUI(){
+    LogicalCalculator(){
         initializeFrame();
         createFrameObjects();
         setButtonValues();
