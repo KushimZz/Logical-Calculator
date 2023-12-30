@@ -7,8 +7,8 @@ This Java code implements a basic graphical calculator with support for decimal,
 
 ## Key Components
 
-- GUI Class:
-- GUI extends JFrame and handles the overall GUI layout and user interactions.
+- LogicalCalculator Class:
+- LogicalCalculator extends JFrame and handles the overall GUI layout and user interactions.
 - Components:
 - JTextField: Displays entered numbers and results.
 - JRadioButton: Selects the desired number system.
