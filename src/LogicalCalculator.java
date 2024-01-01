@@ -7,14 +7,11 @@ public class LogicalCalculator extends JFrame implements ActionListener{
     String memory ="";
     String currentOperation ="";
     String radix = "";
-
-    //swing arayüz tanımlamaları
     JFrame frame;
     JLabel label = new JLabel();
     JTextField textField = new JTextField();
     JTextField memoryTextField = new JTextField();
     JRadioButton binaryButton;
-
     JRadioButton decimalButton;
     JRadioButton hexadecimalButton;
     JButton buttonZero;
@@ -51,17 +48,15 @@ public class LogicalCalculator extends JFrame implements ActionListener{
     JButton buttonNot;
     JButton buttonShiftLeft;
     JButton buttonShiftRight;
-
     ArrayList<JButton> buttonValues = new ArrayList<>();
-
-
-
+    
     LogicalCalculator(){
         initializeFrame();
         createFrameObjects();
         setButtonValues();
         addActionListeners();
     }
+    
     public void initializeFrame() {
         frame = new JFrame();
         frame.setTitle("Logical Calculator");
@@ -73,7 +68,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    //A method for buttons
     private JButton setGuiButtons(int x,int y, int width, int height,Color background, Color foreground, String buttonText){
         JButton button = new JButton(buttonText);
         button.setEnabled(false);
@@ -83,7 +77,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         return button;
     }
 
-    //method for radio buttons
     private JRadioButton setGuiRadioButtons(int x,int y, int width, int height,Color foreground, boolean selectable, String buttonText){
         JRadioButton radioButton = new JRadioButton(buttonText);
         radioButton.setBounds(x,y,width,height);
@@ -92,7 +85,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         return radioButton;
     }
 
-    //for giving features to variables we created at the beginning.
     public void createFrameObjects(){
 
         textField.setBounds(10, 15, 470, 60);
@@ -180,14 +172,13 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         frame.add(buttonOr);
         frame.add(buttonXor);
         frame.add(buttonNot);
-        //yalnızca birini seçebilmek için button gruba koydum
+
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(binaryButton);
         buttonGroup.add(decimalButton);
         buttonGroup.add(hexadecimalButton);
     }
 
-    //for setNumberButtonBehaviors method.
     private void setButtonValues(){
         buttonValues.add(buttonZero);
         buttonValues.add(buttonOne);
@@ -207,7 +198,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         buttonValues.add(buttonF);
     }
 
-    //for adding action listener to every button
     public void addActionListeners() {
         binaryButton.addActionListener(this);
         decimalButton.addActionListener(this);
@@ -247,9 +237,7 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         buttonDiv.addActionListener(this);
         buttonNegate.addActionListener(this);
     }
-
-    //action performed method. i used extract method for every operation to make code more readable.
-    @Override
+@Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         setRadioButtonBehaviors(source);
@@ -269,8 +257,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         setEqualsButtonBehaviors(source);
     }
 
-
-//i created 3 more methods to avoid complex if else blocks. setRadioButtonBehaviors will decide in which number type we will do our operations
     private void setEqualsButtonBehaviors(Object source) {
         if (source == buttonEqualto) {
             if(this.radix.equals("DECIMAL")){
@@ -288,10 +274,8 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         }
     }
 
-    //this method will do every operation for decimal numbers.
     private void handleDecimalOperations() {
         if(this.currentOperation.equals("AND")){
-            //Integer.parseInt() converts string to integer
             int num1 = Integer.parseInt(this.memory);
             int num2 = Integer.parseInt(this.textField.getText());
             int result = num1 & num2;
@@ -365,7 +349,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
 
     private void handleHexadecimalOperations() {
         if(this.currentOperation.equals("AND")){
-            //Long.parseLong() turns String into long
             long num1 = Long.parseLong(this.memory,16);
             long num2 = Long.parseLong(this.textField.getText(),16);
             long result = num1 & num2;
@@ -508,9 +491,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         }
     }
 
-
-
-    //for setting operator
     private void setOperation(String op) {
         String currentText = textField.getText();
         if(currentText.length()>0){
@@ -581,8 +561,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         }
     }
 
-
-    //for adding the buttons from 0 to 9 and A to F to the textField
     private void setNumberButtonBehaviors(Object source) {
         for(JButton buttonValue: this.buttonValues){
             if(source == buttonValue){
@@ -593,7 +571,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         }
     }
 
-    //for delete button
     private void setDeleteButtonBehaviors(Object source) {
         if (source == buttonDelete) {
             int length = textField.getText().length();
@@ -611,7 +588,6 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         }
     }
 
-    //for updating memoryTextField
     private void refreshMemoryTextField(){
         this.memoryTextField.setText(this.memory + " " + this.currentOperation);
     }
@@ -637,6 +613,7 @@ public class LogicalCalculator extends JFrame implements ActionListener{
             this.radix="HEXADECIMAL";
         }
     }
+    
     private void disableButtonsForBinary() {
         this.binaryButton.setEnabled(true);
         this.decimalButton.setEnabled(true);
@@ -676,6 +653,7 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         this.buttonOr.setEnabled(true);
         this.buttonXor.setEnabled(true);
     }
+    
     private void disableButtonsForDecimal() {
         this.buttonAnd.setEnabled(true);
         this.buttonNot.setEnabled(true);
@@ -715,6 +693,7 @@ public class LogicalCalculator extends JFrame implements ActionListener{
         this.buttonShiftLeft.setEnabled(true);
         this.buttonShiftRight.setEnabled(true);
     }
+    
     private void disableButtonsForHexadecimal() {
         this.binaryButton.setEnabled(true);
         this.decimalButton.setEnabled(true);
